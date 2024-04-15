@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Test from "./components/Test";
+import ScrollAnimation from "./components/ScrollAnimation";
 
 function App() {
     return (
@@ -8,7 +8,7 @@ function App() {
             <div className="h-screen"></div>
 
             <div className="screen2">
-                <Test />
+                <ScrollAnimation />
             </div>
 
             <div className="h-screen"></div>
