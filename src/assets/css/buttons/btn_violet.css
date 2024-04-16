@@ -1,0 +1,43 @@
+.btn-violet-50 {
+    @apply bg-violet-50 hover:bg-violet-100 text-black;
+}
+
+.btn-violet-100 {
+    @apply bg-violet-100 hover:bg-violet-200 text-black;
+}
+
+.btn-violet-200 {
+    @apply bg-violet-200 hover:bg-violet-300 text-black;
+}
+
+.btn-violet-300 {
+    @apply bg-violet-300 hover:bg-violet-400 text-black;
+}
+
+.btn-violet-400 {
+    @apply bg-violet-400 hover:bg-violet-500 text-black;
+}
+
+.btn-violet-500 {
+    @apply bg-violet-500 hover:bg-violet-400 text-black;
+}
+
+.btn-violet-600 {
+    @apply bg-violet-600 hover:bg-violet-400 text-white;
+}
+
+.btn-violet-700 {
+    @apply bg-violet-700 hover:bg-violet-500 text-white;
+}
+
+.btn-violet-800 {
+    @apply bg-violet-800 hover:bg-violet-500 text-white;
+}
+
+.btn-violet-900 {
+    @apply bg-violet-900 hover:bg-violet-600 text-white;
+}
+
+.btn-violet-950 {
+    @apply bg-violet-950 hover:bg-violet-600 text-white;
+}

@@ -1,0 +1,38 @@
+@import "./buttons/btn_slate.css";
+@import "./buttons/btn_gray.css";
+@import "./buttons/btn_zinc.css";
+@import "./buttons/btn_neutral.css";
+@import "./buttons/btn_stone.css";
+@import "./buttons/btn_red.css";
+@import "./buttons/btn_orange.css";
+@import "./buttons/btn_amber.css";
+@import "./buttons/btn_yellow.css";
+@import "./buttons/btn_lime.css";
+@import "./buttons/btn_green.css";
+@import "./buttons/btn_emerald.css";
+@import "./buttons/btn_teal.css";
+@import "./buttons/btn_cyan.css";
+@import "./buttons/btn_sky.css";
+@import "./buttons/btn_blue.css";
+@import "./buttons/btn_indigo.css";
+@import "./buttons/btn_violet.css";
+@import "./buttons/btn_purple.css";
+@import "./buttons/btn_fuchsia.css";
+@import "./buttons/btn_pink.css";
+@import "./buttons/btn_rose.css";
+
+.btn {
+    @apply text-sm px-3 py-2 rounded transition-all duration-300;
+}
+
+.btn-sm {
+    @apply text-sm px-3 py-2;
+}
+
+.btn-md {
+    @apply text-base px-5 py-2;
+}
+
+.btn-lg {
+    @apply text-lg px-7 py-2;
+}

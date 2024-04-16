@@ -1,0 +1,43 @@
+.btn-amber-50 {
+    @apply bg-amber-50 hover:bg-amber-100 text-black;
+}
+
+.btn-amber-100 {
+    @apply bg-amber-100 hover:bg-amber-200 text-black;
+}
+
+.btn-amber-200 {
+    @apply bg-amber-200 hover:bg-amber-300 text-black;
+}
+
+.btn-amber-300 {
+    @apply bg-amber-300 hover:bg-amber-400 text-black;
+}
+
+.btn-amber-400 {
+    @apply bg-amber-400 hover:bg-amber-500 text-black;
+}
+
+.btn-amber-500 {
+    @apply bg-amber-500 hover:bg-amber-400 text-black;
+}
+
+.btn-amber-600 {
+    @apply bg-amber-600 hover:bg-amber-400 text-white;
+}
+
+.btn-amber-700 {
+    @apply bg-amber-700 hover:bg-amber-500 text-white;
+}
+
+.btn-amber-800 {
+    @apply bg-amber-800 hover:bg-amber-500 text-white;
+}
+
+.btn-amber-900 {
+    @apply bg-amber-900 hover:bg-amber-600 text-white;
+}
+
+.btn-amber-950 {
+    @apply bg-amber-950 hover:bg-amber-600 text-white;
+}

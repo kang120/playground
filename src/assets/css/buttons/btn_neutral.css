@@ -1,0 +1,43 @@
+.btn-neutral-50 {
+    @apply bg-neutral-50 hover:bg-neutral-100 text-black;
+}
+
+.btn-neutral-100 {
+    @apply bg-neutral-100 hover:bg-neutral-200 text-black;
+}
+
+.btn-neutral-200 {
+    @apply bg-neutral-200 hover:bg-neutral-300 text-black;
+}
+
+.btn-neutral-300 {
+    @apply bg-neutral-300 hover:bg-neutral-400 text-black;
+}
+
+.btn-neutral-400 {
+    @apply bg-neutral-400 hover:bg-neutral-500 text-black;
+}
+
+.btn-neutral-500 {
+    @apply bg-neutral-500 hover:bg-neutral-400 text-black;
+}
+
+.btn-neutral-600 {
+    @apply bg-neutral-600 hover:bg-neutral-400 text-white;
+}
+
+.btn-neutral-700 {
+    @apply bg-neutral-700 hover:bg-neutral-500 text-white;
+}
+
+.btn-neutral-800 {
+    @apply bg-neutral-800 hover:bg-neutral-500 text-white;
+}
+
+.btn-neutral-900 {
+    @apply bg-neutral-900 hover:bg-neutral-600 text-white;
+}
+
+.btn-neutral-950 {
+    @apply bg-neutral-950 hover:bg-neutral-600 text-white;
+}

@@ -1,0 +1,43 @@
+.btn-fuchsia-50 {
+    @apply bg-fuchsia-50 hover:bg-fuchsia-100 text-black;
+}
+
+.btn-fuchsia-100 {
+    @apply bg-fuchsia-100 hover:bg-fuchsia-200 text-black;
+}
+
+.btn-fuchsia-200 {
+    @apply bg-fuchsia-200 hover:bg-fuchsia-300 text-black;
+}
+
+.btn-fuchsia-300 {
+    @apply bg-fuchsia-300 hover:bg-fuchsia-400 text-black;
+}
+
+.btn-fuchsia-400 {
+    @apply bg-fuchsia-400 hover:bg-fuchsia-500 text-black;
+}
+
+.btn-fuchsia-500 {
+    @apply bg-fuchsia-500 hover:bg-fuchsia-400 text-black;
+}
+
+.btn-fuchsia-600 {
+    @apply bg-fuchsia-600 hover:bg-fuchsia-400 text-white;
+}
+
+.btn-fuchsia-700 {
+    @apply bg-fuchsia-700 hover:bg-fuchsia-500 text-white;
+}
+
+.btn-fuchsia-800 {
+    @apply bg-fuchsia-800 hover:bg-fuchsia-500 text-white;
+}
+
+.btn-fuchsia-900 {
+    @apply bg-fuchsia-900 hover:bg-fuchsia-600 text-white;
+}
+
+.btn-fuchsia-950 {
+    @apply bg-fuchsia-950 hover:bg-fuchsia-600 text-white;
+}

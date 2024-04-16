@@ -1,0 +1,43 @@
+.btn-emerald-50 {
+    @apply bg-emerald-50 hover:bg-emerald-100 text-black;
+}
+
+.btn-emerald-100 {
+    @apply bg-emerald-100 hover:bg-emerald-200 text-black;
+}
+
+.btn-emerald-200 {
+    @apply bg-emerald-200 hover:bg-emerald-300 text-black;
+}
+
+.btn-emerald-300 {
+    @apply bg-emerald-300 hover:bg-emerald-400 text-black;
+}
+
+.btn-emerald-400 {
+    @apply bg-emerald-400 hover:bg-emerald-500 text-black;
+}
+
+.btn-emerald-500 {
+    @apply bg-emerald-500 hover:bg-emerald-400 text-black;
+}
+
+.btn-emerald-600 {
+    @apply bg-emerald-600 hover:bg-emerald-400 text-white;
+}
+
+.btn-emerald-700 {
+    @apply bg-emerald-700 hover:bg-emerald-500 text-white;
+}
+
+.btn-emerald-800 {
+    @apply bg-emerald-800 hover:bg-emerald-500 text-white;
+}
+
+.btn-emerald-900 {
+    @apply bg-emerald-900 hover:bg-emerald-600 text-white;
+}
+
+.btn-emerald-950 {
+    @apply bg-emerald-950 hover:bg-emerald-600 text-white;
+}

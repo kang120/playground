@@ -1,0 +1,43 @@
+.btn-pink-50 {
+    @apply bg-pink-50 hover:bg-pink-100 text-black;
+}
+
+.btn-pink-100 {
+    @apply bg-pink-100 hover:bg-pink-200 text-black;
+}
+
+.btn-pink-200 {
+    @apply bg-pink-200 hover:bg-pink-300 text-black;
+}
+
+.btn-pink-300 {
+    @apply bg-pink-300 hover:bg-pink-400 text-black;
+}
+
+.btn-pink-400 {
+    @apply bg-pink-400 hover:bg-pink-500 text-black;
+}
+
+.btn-pink-500 {
+    @apply bg-pink-500 hover:bg-pink-400 text-black;
+}
+
+.btn-pink-600 {
+    @apply bg-pink-600 hover:bg-pink-400 text-white;
+}
+
+.btn-pink-700 {
+    @apply bg-pink-700 hover:bg-pink-500 text-white;
+}
+
+.btn-pink-800 {
+    @apply bg-pink-800 hover:bg-pink-500 text-white;
+}
+
+.btn-pink-900 {
+    @apply bg-pink-900 hover:bg-pink-600 text-white;
+}
+
+.btn-pink-950 {
+    @apply bg-pink-950 hover:bg-pink-600 text-white;
+}

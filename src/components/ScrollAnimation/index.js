@@ -11,7 +11,7 @@ const ScrollAnimation = () => {
         const top = playground.scrollHeight;
         const playgroundTop = top - (top % 100);
 
-        const windowThreshold = Math.round((window.innerHeight * 4) / 5);
+        const windowThreshold = window.innerHeight;
         const threshold = windowThreshold - (windowThreshold % 100);
 
         setScrollYStart(playgroundTop - threshold);
@@ -35,7 +35,7 @@ const ScrollAnimation = () => {
         const update = () => {
             const playgroundTop = document.getElementById("playground").getBoundingClientRect().top;
             const scrollY = window.scrollY - (window.scrollY % 100);
-            const windowThreshold = Math.round((window.innerHeight * 4) / 5);
+            const windowThreshold = window.innerHeight;
 
             if (playgroundTop >= windowThreshold) {
                 return;
@@ -78,13 +78,19 @@ const ScrollAnimation = () => {
     }, [scrollYStart]);
 
     return (
-        <div id="playground" className="sticky top-0 bg-black h-screen overflow-hidden">
-            {doms.map((dom, index) => (
-                <div key={index} id={dom.id} className={dom.classList}>
-                    {dom.type == "image" ? <img className="w-full" src={dom.src} /> : null}
-                    {dom.type == "text" ? <div className={dom.textClassList}>{dom.text}</div> : null}
+        <div>
+            <div className="h-screen"></div>
+            <div className="screen2">
+                <div id="playground" className="sticky top-0 bg-black h-screen overflow-hidden">
+                    {doms.map((dom, index) => (
+                        <div key={index} id={dom.id} className={dom.classList}>
+                            {dom.type == "image" ? <img className="w-full" src={dom.src} /> : null}
+                            {dom.type == "text" ? <div className={dom.textClassList}>{dom.text}</div> : null}
+                        </div>
+                    ))}
                 </div>
-            ))}
+            </div>
+            <div className="h-screen"></div>
         </div>
     );
 };

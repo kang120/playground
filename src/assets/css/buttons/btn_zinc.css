@@ -1,0 +1,43 @@
+.btn-zinc-50 {
+    @apply bg-zinc-50 hover:bg-zinc-100 text-black;
+}
+
+.btn-zinc-100 {
+    @apply bg-zinc-100 hover:bg-zinc-200 text-black;
+}
+
+.btn-zinc-200 {
+    @apply bg-zinc-200 hover:bg-zinc-300 text-black;
+}
+
+.btn-zinc-300 {
+    @apply bg-zinc-300 hover:bg-zinc-400 text-black;
+}
+
+.btn-zinc-400 {
+    @apply bg-zinc-400 hover:bg-zinc-500 text-black;
+}
+
+.btn-zinc-500 {
+    @apply bg-zinc-500 hover:bg-zinc-400 text-black;
+}
+
+.btn-zinc-600 {
+    @apply bg-zinc-600 hover:bg-zinc-400 text-white;
+}
+
+.btn-zinc-700 {
+    @apply bg-zinc-700 hover:bg-zinc-500 text-white;
+}
+
+.btn-zinc-800 {
+    @apply bg-zinc-800 hover:bg-zinc-500 text-white;
+}
+
+.btn-zinc-900 {
+    @apply bg-zinc-900 hover:bg-zinc-600 text-white;
+}
+
+.btn-zinc-950 {
+    @apply bg-zinc-950 hover:bg-zinc-600 text-white;
+}

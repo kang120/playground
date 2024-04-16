@@ -1,0 +1,43 @@
+.btn-rose-50 {
+    @apply bg-rose-50 hover:bg-rose-100 text-black;
+}
+
+.btn-rose-100 {
+    @apply bg-rose-100 hover:bg-rose-200 text-black;
+}
+
+.btn-rose-200 {
+    @apply bg-rose-200 hover:bg-rose-300 text-black;
+}
+
+.btn-rose-300 {
+    @apply bg-rose-300 hover:bg-rose-400 text-black;
+}
+
+.btn-rose-400 {
+    @apply bg-rose-400 hover:bg-rose-500 text-black;
+}
+
+.btn-rose-500 {
+    @apply bg-rose-500 hover:bg-rose-400 text-black;
+}
+
+.btn-rose-600 {
+    @apply bg-rose-600 hover:bg-rose-400 text-white;
+}
+
+.btn-rose-700 {
+    @apply bg-rose-700 hover:bg-rose-500 text-white;
+}
+
+.btn-rose-800 {
+    @apply bg-rose-800 hover:bg-rose-500 text-white;
+}
+
+.btn-rose-900 {
+    @apply bg-rose-900 hover:bg-rose-600 text-white;
+}
+
+.btn-rose-950 {
+    @apply bg-rose-950 hover:bg-rose-600 text-white;
+}

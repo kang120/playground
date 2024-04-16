@@ -1,0 +1,43 @@
+.btn-teal-50 {
+    @apply bg-teal-50 hover:bg-teal-100 text-black;
+}
+
+.btn-teal-100 {
+    @apply bg-teal-100 hover:bg-teal-200 text-black;
+}
+
+.btn-teal-200 {
+    @apply bg-teal-200 hover:bg-teal-300 text-black;
+}
+
+.btn-teal-300 {
+    @apply bg-teal-300 hover:bg-teal-400 text-black;
+}
+
+.btn-teal-400 {
+    @apply bg-teal-400 hover:bg-teal-500 text-black;
+}
+
+.btn-teal-500 {
+    @apply bg-teal-500 hover:bg-teal-400 text-black;
+}
+
+.btn-teal-600 {
+    @apply bg-teal-600 hover:bg-teal-400 text-white;
+}
+
+.btn-teal-700 {
+    @apply bg-teal-700 hover:bg-teal-500 text-white;
+}
+
+.btn-teal-800 {
+    @apply bg-teal-800 hover:bg-teal-500 text-white;
+}
+
+.btn-teal-900 {
+    @apply bg-teal-900 hover:bg-teal-600 text-white;
+}
+
+.btn-teal-950 {
+    @apply bg-teal-950 hover:bg-teal-600 text-white;
+}

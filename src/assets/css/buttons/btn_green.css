@@ -1,0 +1,43 @@
+.btn-green-50 {
+    @apply bg-green-50 hover:bg-green-100 text-black;
+}
+
+.btn-green-100 {
+    @apply bg-green-100 hover:bg-green-200 text-black;
+}
+
+.btn-green-200 {
+    @apply bg-green-200 hover:bg-green-300 text-black;
+}
+
+.btn-green-300 {
+    @apply bg-green-300 hover:bg-green-400 text-black;
+}
+
+.btn-green-400 {
+    @apply bg-green-400 hover:bg-green-500 text-black;
+}
+
+.btn-green-500 {
+    @apply bg-green-500 hover:bg-green-400 text-black;
+}
+
+.btn-green-600 {
+    @apply bg-green-600 hover:bg-green-400 text-white;
+}
+
+.btn-green-700 {
+    @apply bg-green-700 hover:bg-green-500 text-white;
+}
+
+.btn-green-800 {
+    @apply bg-green-800 hover:bg-green-500 text-white;
+}
+
+.btn-green-900 {
+    @apply bg-green-900 hover:bg-green-600 text-white;
+}
+
+.btn-green-950 {
+    @apply bg-green-950 hover:bg-green-600 text-white;
+}
