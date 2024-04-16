@@ -51,7 +51,7 @@ const Topbar = () => {
                 <div className="ms-2 font-bold text-base">PLAYGROUND{" / " + title}</div>
             </div>
 
-            <div className="flex items-center ms-auto me-4 md:me-10">
+            <div className="hidden md:flex items-center ms-auto me-4 md:me-10">
                 <button className="btn btn-blue-600 flex items-center" onClick={gotoPersonalWebsite}>
                     <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                     <div className="ms-4">Wei Kang</div>

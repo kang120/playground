@@ -10,17 +10,12 @@ import Switch from "../components/FormComponents/Switch";
 import { toggleModal } from "../helpers";
 
 const ButtonsView = () => {
-    const { setTitle, setCodeBlock } = useAppStore();
+    const { sidebarAlwaysOpen, setTitle, setCodeBlock } = useAppStore();
 
-    const [customColor, setCustomColor] = useColor("rgb(86 30 203)");
+    const [customColor, setCustomColor] = useColor("rgb(74, 222, 128)");
     const [customWhiteText, setCustomWhiteText] = useState(false);
 
     const tailwindColors = [
-        "slate",
-        "gray",
-        "zinc",
-        "neutral",
-        "stone",
         "red",
         "orange",
         "amber",
@@ -38,6 +33,11 @@ const ButtonsView = () => {
         "fuchsia",
         "pink",
         "rose",
+        "slate",
+        "gray",
+        "zinc",
+        "neutral",
+        "stone",
     ];
     const values = ["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"];
 
@@ -45,38 +45,72 @@ const ButtonsView = () => {
         setTitle("Buttons");
     }, []);
 
-    const showCode = (size, color, value) => {
-        var code = ".btn {\n    @apply text-sm px-3 py-2 rounded transition-all duration-300duration-300duration-300;\n}\n\n";
+    const showCode = (e, size, color, value) => {
+        var tailwindCode = ".btn {\n    @apply text-sm px-3 py-2 rounded transition-all duration-300;\n}\n\n";
 
-        code += `.btn-${color}-${value} {\n    @apply bg-${color}-${value};\n}\n\n`;
+        tailwindCode += `.btn-${color}-${value} {\n    @apply bg-${color}-${value};\n}\n\n`;
 
         if (size == "sm") {
-            code += ".btn-sm {\n    @apply text-sm px-3 py-2;\n}";
+            tailwindCode += ".btn-sm {\n    @apply text-sm px-3 py-2;\n}";
         } else if (size == "md") {
-            code += ".btn-md {\n    @apply text-base px-5 py-2;\n}";
+            tailwindCode += ".btn-md {\n    @apply text-base px-5 py-2;\n}";
         } else {
-            code += ".btn-lg {\n    @apply text-lg px-7 py-2;\n}";
+            tailwindCode += ".btn-lg {\n    @apply text-lg px-7 py-2;\n}";
         }
 
+        const style = window.getComputedStyle(e.target);
+
+        var cssCode = ".btn {\n";
+        cssCode += "    font-size: " + style.fontSize + ";\n";
+        cssCode += "    line-height: " + style.lineHeight + ";\n";
+        cssCode += "    padding: " + style.padding + ";\n";
+        cssCode += "    border-radius: " + style.borderRadius + ";\n";
+        cssCode += "    transition-duration: " + style.transitionDuration + ";\n";
+        cssCode += "    background-color: " + style.backgroundColor + ";\n";
+        cssCode += "}";
+
         setCodeBlock({
-            code: code,
-            language: "css",
+            codeList: {
+                tailwindcss: tailwindCode,
+                css: cssCode,
+            },
+            optionList: [
+                {
+                    label: "tailwindcss",
+                    language: "css",
+                },
+                {
+                    label: "css",
+                    language: "css",
+                },
+            ],
+            selectedCode: tailwindCode,
+            selectedOption: {
+                label: "tailwindcss",
+                language: "css",
+            },
         });
         toggleModal("code");
     };
 
     return (
         <MainWrapper>
-            <div className="me-60">
+            <div className="md:me-60">
                 <Section id="btn-sm">
                     <div className="text-xl text-center font-bold">Small Buttons</div>
 
                     <div className="mt-10 flex flex-col gap-y-7">
                         {tailwindColors.map((color, index) => (
-                            <div key={index} className="grid grid-cols-11 gap-x-4 gap-y-4">
+                            <div
+                                key={index}
+                                className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-11 gap-x-2 gap-y-4"
+                            >
                                 {values.map((value, index2) => (
                                     <div key={index2} className="flex flex-col items-center">
-                                        <button className={`btn btn-sm btn-${color}-${value}`} onClick={() => showCode("sm", color, value)}>
+                                        <button
+                                            className={`btn btn-sm btn-${color}-${value}`}
+                                            onClick={(e) => showCode(e, "sm", color, value)}
+                                        >
                                             Click me
                                         </button>
                                         <div className="text-xs">
@@ -94,10 +128,20 @@ const ButtonsView = () => {
 
                     <div className="mt-10 flex flex-col gap-y-7">
                         {tailwindColors.map((color, index) => (
-                            <div key={index} className="grid grid-cols-11 gap-x-4 gap-y-4">
+                            <div
+                                key={index}
+                                className={`grid ${
+                                    sidebarAlwaysOpen
+                                        ? "grid-cols-3 sm:grid-cols-5 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-9"
+                                        : "lg:grid-cols-6 xl:grid-cols-9 2xl:grid-cols-11"
+                                } gap-x-2 gap-y-4`}
+                            >
                                 {values.map((value, index2) => (
                                     <div key={index2} className="flex flex-col items-center">
-                                        <button className={`btn btn-md btn-${color}-${value}`} onClick={() => showCode("md", color, value)}>
+                                        <button
+                                            className={`btn btn-md btn-${color}-${value}`}
+                                            onClick={(e) => showCode(e, "md", color, value)}
+                                        >
                                             Click me
                                         </button>
                                         <div className="text-xs">
@@ -115,10 +159,20 @@ const ButtonsView = () => {
 
                     <div className="mt-10 flex flex-col gap-y-7">
                         {tailwindColors.map((color, index) => (
-                            <div key={index} className="grid grid-cols-8 gap-x-4 gap-y-4">
+                            <div
+                                key={index}
+                                className={`grid ${
+                                    sidebarAlwaysOpen
+                                        ? "grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-8"
+                                        : "lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-9"
+                                } gap-x-2 gap-y-4`}
+                            >
                                 {values.map((value, index2) => (
                                     <div key={index2} className="flex flex-col items-center">
-                                        <button className={`btn btn-lg btn-${color}-${value}`} onClick={() => showCode("lg", color, value)}>
+                                        <button
+                                            className={`btn btn-lg btn-${color}-${value}`}
+                                            onClick={(e) => showCode(e, "lg", color, value)}
+                                        >
                                             Click me
                                         </button>
                                         <div className="text-xs">
@@ -136,8 +190,8 @@ const ButtonsView = () => {
                     <div className="mt-3 text-center text-sm">Build the button with color pallete</div>
 
                     <div className="mt-16">
-                        <div className="flex items-stretch">
-                            <div className="flex flex-col w-1/2">
+                        <div className="flex flex-col lg:flex-row items-stretch">
+                            <div className="flex flex-col gap-y-4 lg:gap-y-0 lg:w-1/2">
                                 <div className="center">
                                     <div className="w-10">
                                         <Switch value={customWhiteText} onChange={setCustomWhiteText} />
@@ -145,7 +199,7 @@ const ButtonsView = () => {
                                     <div className="ms-3">White Text</div>
                                 </div>
 
-                                <div className="grow flex flex-col items-center justify-evenly">
+                                <div className="grow flex flex-row lg:flex-col items-center justify-evenly">
                                     <button
                                         style={{ background: customColor.hex, color: customWhiteText ? "white" : "black" }}
                                         className="btn btn-sm"
@@ -167,15 +221,27 @@ const ButtonsView = () => {
                                 </div>
                             </div>
 
-                            <div className="grow">
+                            <div className="grow mt-6 lg:mt-0">
                                 <ColorPicker color={customColor} onChange={setCustomColor} />
                             </div>
                         </div>
                     </div>
                 </Section>
+
+                <Section id="btn-special">
+                    <div className="text-xl text-center font-bold">Special Button</div>
+
+                    <div className="mt-10 flex flex-col gap-y-7">
+                        <div className="btn btn-sm flex items-center justify-center">
+                            <button className="button-1 px-6 py-3 bg-blue-300 hover:after:bg-blue-200 z-10 rounded relative overflow-hidden">
+                                Click me
+                            </button>
+                        </div>
+                    </div>
+                </Section>
             </div>
 
-            <div className="fixed top-12 right-0 w-60 pe-10 pt-10 text-sm">
+            <div className="hidden md:block md:fixed top-12 right-0 w-60 pe-10 pt-10 text-sm">
                 <div className="font-medium">On this page</div>
 
                 <div className="flex flex-col gap-y-2 mt-5">
@@ -203,6 +269,18 @@ const ButtonsView = () => {
                     <a href="#btn-custom" className="relative ms-4 flex text-gray-500 hover:text-gray-900 hover:font-medium cursor-pointer">
                         <FontAwesomeIcon className="fa-xs absolute left-0 top-0 translate-y-1/2" icon={faAngleRight} />
                         <div className="ms-4">Build with color pallete</div>
+                    </a>
+                </div>
+
+                <div className="flex flex-col gap-y-2 mt-5">
+                    <div className="font-medium">Special Buttons</div>
+
+                    <a
+                        href="#btn-special"
+                        className="relative ms-4 flex text-gray-500 hover:text-gray-900 hover:font-medium cursor-pointer"
+                    >
+                        <FontAwesomeIcon className="fa-xs absolute left-0 top-0 translate-y-1/2" icon={faAngleRight} />
+                        <div className="ms-4">Special Buttons</div>
                     </a>
                 </div>
             </div>

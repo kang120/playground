@@ -38,6 +38,13 @@ const useAppStore = create((set, get) => ({
     setCodeBlock: (codeBlock) => {
         set({ codeBlock: codeBlock });
     },
+    changeCodeBlock: (option) => {
+        const prev = get().codeBlock;
+
+        set({
+            codeBlock: { ...prev, selectedOption: option, selectedCode: prev.codeList[option.label] },
+        });
+    },
 }));
 
 export default useAppStore;

@@ -20,9 +20,10 @@
 @import "./buttons/btn_fuchsia.css";
 @import "./buttons/btn_pink.css";
 @import "./buttons/btn_rose.css";
+@import "./buttons/btn_special.css";
 
 .btn {
-    @apply text-sm px-3 py-2 rounded transition-all duration-300;
+    @apply text-sm px-5 py-2 rounded transition-all duration-300;
 }
 
 .btn-sm {
@@ -30,9 +31,9 @@
 }
 
 .btn-md {
-    @apply text-base px-5 py-2;
+    @apply text-base px-4 py-2;
 }
 
 .btn-lg {
-    @apply text-lg px-7 py-2;
+    @apply text-lg px-5 py-2;
 }

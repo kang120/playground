@@ -58,7 +58,7 @@ const Modal = ({ type, children, onClose, isStatic = false }) => {
             <div
                 ref={modalContentRef}
                 id={`${type}-modal-content`}
-                className="min-w-full md:min-w-96 w-fit max-w-3xl -translate-y-10 bg-white rounded transition-all ease-in-out duration-1000"
+                className="min-w-full md:min-w-96 w-fit -translate-y-10 bg-white rounded transition-all ease-in-out duration-1000 bg-blue-300"
             >
                 {children}
             </div>
