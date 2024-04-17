@@ -133,10 +133,17 @@ export const domData3 = [
 export const domData = [
     {
         id: "main-logo",
-        startPoint: 0.1,
-        endPoint: 0.4,
         animations: {
-            scaleRange: 2,
+            scale: {
+                startPoint: 0.1,
+                endPoint: 0.4,
+                targetValue: 2,
+            },
+            transformY: {
+                startPoint: 0.2,
+                endPoint: 0.4,
+                targetValue: 2,
+            }
         },
     },
 ];

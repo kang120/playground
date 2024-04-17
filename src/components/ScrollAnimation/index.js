@@ -53,17 +53,13 @@ const ScrollAnimation = () => {
             const scrollPercentage = (window.innerHeight - containerTop) / containerHeight;
             console.log(scrollPercentage);
 
+
             doms.forEach((dom) => {
-                const startPoint = dom.startPoint;
-                const endPoint = dom.endPoint;
-
-                if (scrollPercentage < startPoint || scrollPercentage > endPoint) {
-                    return;
-                }
-
                 const element = document.getElementById(dom.id);
 
-                const scale = (dom.animations.scaleRange * (scrollPercentage - startPoint)) / endPoint;
+                const scale =
+                    (dom.animations.scale.targetValue * (scrollPercentage - dom.animations.scale.startPoint)) /
+                    dom.animations.scale.endPoint;
 
                 element.style.transform = `translateX(-50%) scale(${scale})`;
             });
