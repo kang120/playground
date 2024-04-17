@@ -8,6 +8,9 @@ import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/css";
 import Switch from "../components/FormComponents/Switch";
 import { toggleModal } from "../helpers";
+import Button1 from "../components/Buttons/Button1";
+import SectionNavbar from "../components/Navbar/SectionNavbar";
+import { BUTTON_SECTIONS } from "../constant";
 
 const ButtonsView = () => {
     const { sidebarAlwaysOpen, setTitle, setCodeBlock } = useAppStore();
@@ -45,7 +48,21 @@ const ButtonsView = () => {
         setTitle("Buttons");
     }, []);
 
-    const showCode = (e, size, color, value) => {
+    useEffect(() => {
+        const r = parseInt(customColor.rgb.r);
+        const g = parseInt(customColor.rgb.g);
+        const b = parseInt(customColor.rgb.b);
+
+        const brightness = 0.299 * r + 0.587 * g + 0.114 * b;
+
+        if (brightness < 128) {
+            setCustomWhiteText(true);
+        } else {
+            setCustomWhiteText(false);
+        }
+    }, [customColor]);
+
+    const showTailwindBtnCode = (e, size, color, value) => {
         var tailwindCode = ".btn {\n    @apply text-sm px-3 py-2 rounded transition-all duration-300;\n}\n\n";
 
         tailwindCode += `.btn-${color}-${value} {\n    @apply bg-${color}-${value};\n}\n\n`;
@@ -67,6 +84,7 @@ const ButtonsView = () => {
         cssCode += "    border-radius: " + style.borderRadius + ";\n";
         cssCode += "    transition-duration: " + style.transitionDuration + ";\n";
         cssCode += "    background-color: " + style.backgroundColor + ";\n";
+        cssCode += "    color: " + style.color + ";\n";
         cssCode += "}";
 
         setCodeBlock({
@@ -93,6 +111,38 @@ const ButtonsView = () => {
         toggleModal("code");
     };
 
+    const showCustomBtnCode = (e, size) => {
+        const style = window.getComputedStyle(e.target);
+
+        var cssCode = ".btn {\n";
+        cssCode += "    font-size: " + style.fontSize + ";\n";
+        cssCode += "    line-height: " + style.lineHeight + ";\n";
+        cssCode += "    padding: " + style.padding + ";\n";
+        cssCode += "    border-radius: " + style.borderRadius + ";\n";
+        cssCode += "    transition-duration: " + style.transitionDuration + ";\n";
+        cssCode += "    background-color: " + style.backgroundColor + ";\n";
+        cssCode += "    color: " + style.color + ";\n";
+        cssCode += "}";
+
+        setCodeBlock({
+            codeList: {
+                css: cssCode,
+            },
+            optionList: [
+                {
+                    label: "css",
+                    language: "css",
+                },
+            ],
+            selectedCode: cssCode,
+            selectedOption: {
+                label: "css",
+                language: "css",
+            },
+        });
+        toggleModal("code");
+    };
+
     return (
         <MainWrapper>
             <div className="md:me-60">
@@ -109,7 +159,7 @@ const ButtonsView = () => {
                                     <div key={index2} className="flex flex-col items-center">
                                         <button
                                             className={`btn btn-sm btn-${color}-${value}`}
-                                            onClick={(e) => showCode(e, "sm", color, value)}
+                                            onClick={(e) => showTailwindBtnCode(e, "sm", color, value)}
                                         >
                                             Click me
                                         </button>
@@ -140,7 +190,7 @@ const ButtonsView = () => {
                                     <div key={index2} className="flex flex-col items-center">
                                         <button
                                             className={`btn btn-md btn-${color}-${value}`}
-                                            onClick={(e) => showCode(e, "md", color, value)}
+                                            onClick={(e) => showTailwindBtnCode(e, "md", color, value)}
                                         >
                                             Click me
                                         </button>
@@ -171,7 +221,7 @@ const ButtonsView = () => {
                                     <div key={index2} className="flex flex-col items-center">
                                         <button
                                             className={`btn btn-lg btn-${color}-${value}`}
-                                            onClick={(e) => showCode(e, "lg", color, value)}
+                                            onClick={(e) => showTailwindBtnCode(e, "lg", color, value)}
                                         >
                                             Click me
                                         </button>
@@ -193,28 +243,35 @@ const ButtonsView = () => {
                         <div className="flex flex-col lg:flex-row items-stretch">
                             <div className="flex flex-col gap-y-4 lg:gap-y-0 lg:w-1/2">
                                 <div className="center">
-                                    <div className="w-10">
-                                        <Switch value={customWhiteText} onChange={setCustomWhiteText} />
+                                    <div>
+                                        <Switch
+                                            inputId="white"
+                                            label="White Text"
+                                            checked={customWhiteText}
+                                            onChange={setCustomWhiteText}
+                                        />
                                     </div>
-                                    <div className="ms-3">White Text</div>
                                 </div>
 
                                 <div className="grow flex flex-row lg:flex-col items-center justify-evenly">
                                     <button
                                         style={{ background: customColor.hex, color: customWhiteText ? "white" : "black" }}
                                         className="btn btn-sm"
+                                        onClick={(e) => showCustomBtnCode(e, "sm")}
                                     >
                                         Click Me
                                     </button>
                                     <button
                                         style={{ background: customColor.hex, color: customWhiteText ? "white" : "black" }}
                                         className="btn btn-md"
+                                        onClick={(e) => showCustomBtnCode(e, "md")}
                                     >
                                         Click Me
                                     </button>
                                     <button
                                         style={{ background: customColor.hex, color: customWhiteText ? "white" : "black" }}
                                         className="btn btn-lg"
+                                        onClick={(e) => showCustomBtnCode(e, "lg")}
                                     >
                                         Click Me
                                     </button>
@@ -231,59 +288,13 @@ const ButtonsView = () => {
                 <Section id="btn-special">
                     <div className="text-xl text-center font-bold">Special Button</div>
 
-                    <div className="mt-10 flex flex-col gap-y-7">
-                        <div className="btn btn-sm flex items-center justify-center">
-                            <button className="button-1 px-6 py-3 bg-blue-300 hover:after:bg-blue-200 z-10 rounded relative overflow-hidden">
-                                Click me
-                            </button>
-                        </div>
+                    <div className="mt-10 grid-cols-10 gap-x-2 gap-y-4">
+                        <Button1 />
                     </div>
                 </Section>
             </div>
 
-            <div className="hidden md:block md:fixed top-12 right-0 w-60 pe-10 pt-10 text-sm">
-                <div className="font-medium">On this page</div>
-
-                <div className="flex flex-col gap-y-2 mt-5">
-                    <div className="font-medium">Tailwind Buttons</div>
-
-                    <a href="#btn-sm" className="relative ms-4 flex text-gray-500 hover:text-gray-900 hover:font-medium cursor-pointer">
-                        <FontAwesomeIcon className="fa-xs absolute left-0 top-0 translate-y-1/2" icon={faAngleRight} />
-                        <div className="ms-4">Small buttons</div>
-                    </a>
-
-                    <a href="#btn-md" className="relative ms-4 flex text-gray-500 hover:text-gray-900 hover:font-medium cursor-pointer">
-                        <FontAwesomeIcon className="fa-xs absolute left-0 top-0 translate-y-1/2" icon={faAngleRight} />
-                        <div className="ms-4">Medium buttons</div>
-                    </a>
-
-                    <a href="#btn-lg" className="relative ms-4 flex text-gray-500 hover:text-gray-900 hover:font-medium cursor-pointer">
-                        <FontAwesomeIcon className="fa-xs absolute left-0 top-0 translate-y-1/2" icon={faAngleRight} />
-                        <div className="ms-4">Large buttons</div>
-                    </a>
-                </div>
-
-                <div className="flex flex-col gap-y-2 mt-5">
-                    <div className="font-medium">Custom Buttons</div>
-
-                    <a href="#btn-custom" className="relative ms-4 flex text-gray-500 hover:text-gray-900 hover:font-medium cursor-pointer">
-                        <FontAwesomeIcon className="fa-xs absolute left-0 top-0 translate-y-1/2" icon={faAngleRight} />
-                        <div className="ms-4">Build with color pallete</div>
-                    </a>
-                </div>
-
-                <div className="flex flex-col gap-y-2 mt-5">
-                    <div className="font-medium">Special Buttons</div>
-
-                    <a
-                        href="#btn-special"
-                        className="relative ms-4 flex text-gray-500 hover:text-gray-900 hover:font-medium cursor-pointer"
-                    >
-                        <FontAwesomeIcon className="fa-xs absolute left-0 top-0 translate-y-1/2" icon={faAngleRight} />
-                        <div className="ms-4">Special Buttons</div>
-                    </a>
-                </div>
-            </div>
+            <SectionNavbar sections={BUTTON_SECTIONS} />
         </MainWrapper>
     );
 };

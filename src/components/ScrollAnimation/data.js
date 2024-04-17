@@ -12,7 +12,7 @@ export const domData = [
             OPACITY: ["100%", "100%", "100%", "100%", "100%", "100%", "50%", "30%", "0"],
         },
         type: "image",
-        src: logo,
+        src: "logo",
     },
     {
         id: "main-logo-text",
@@ -25,7 +25,7 @@ export const domData = [
             OPACITY: ["100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "50%", "0"],
         },
         type: "text",
-        text: "EF Software",
+        text: "Tesss",
         textClassList: "text-white text-nowrap flex items-center justify-center",
     },
     {

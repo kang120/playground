@@ -1,8 +1,5 @@
-.button-1 {
-    @apply before:bg-violet-600 after:bg-blue-100;
-}
-
 .button-1::before {
+    @apply bg-violet-600;
     content: "";
     position: absolute;
     top: 50%;
@@ -15,6 +12,7 @@
 }
 
 .button-1::after {
+    @apply bg-blue-100;
     content: "";
     position: absolute;
     top: 3px;

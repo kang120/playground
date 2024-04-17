@@ -16,6 +16,7 @@ import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useAppStore from "../../stores/AppStore";
 import { PERSONAL_WEBSITE } from "../../constant";
+import lwkLogo from "../../assets/images/lwk.png";
 
 const Topbar = () => {
     const { sidebarAlwaysOpen, title, toggleSidebarAlwaysOpen, toggleSidebarOpen } = useAppStore();
@@ -36,9 +37,7 @@ const Topbar = () => {
 
     return (
         <div
-            className={`${
-                sidebarAlwaysOpen ? "lg:ps-64" : "lg:ps-12"
-            } fixed flex items-center w-full h-12 bg-white z-20 text-sm shadow-lg`}
+            className={`${sidebarAlwaysOpen ? "lg:ps-64" : "lg:ps-12"} fixed flex items-center w-full h-12 bg-white z-20 text-sm shadow-lg`}
         >
             <div
                 className="w-8 h-8 ms-4 center hover:bg-gray-200 hover:text-slate-950 rounded-full cursor-pointer"
@@ -56,6 +55,10 @@ const Topbar = () => {
                     <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                     <div className="ms-4">Wei Kang</div>
                 </button>
+            </div>
+
+            <div className="h-full ms-auto me-4 p-2 rounded-full">
+                <img className="w-full h-full" src={lwkLogo} />
             </div>
         </div>
     );

@@ -18,6 +18,8 @@ function App() {
             <Router>
                 <Routes>
                     <Route path="/" element={<ButtonsView />} />
+                    <Route path="/buttons" element={<ButtonsView />} />
+                    <Route path="/playground_1" element={<ScrollAnimation />} />
                 </Routes>
             </Router>
 

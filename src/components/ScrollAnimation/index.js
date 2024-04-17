@@ -80,7 +80,7 @@ const ScrollAnimation = () => {
     return (
         <div>
             <div className="h-screen"></div>
-            <div className="screen2">
+            <div style={{ height: "1500px" }} className="">
                 <div id="playground" className="sticky top-0 bg-black h-screen overflow-hidden">
                     {doms.map((dom, index) => (
                         <div key={index} id={dom.id} className={dom.classList}>
