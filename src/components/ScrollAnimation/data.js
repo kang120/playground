@@ -90,7 +90,7 @@ export const domData2 = [
     },
 ];
 
-export const domData = [
+export const domData3 = [
     {
         id: "main-logo",
         defaultClass: "absolute px-10 py-8 bg-gradient-to-r from-rose-400 to-red-200 rounded-3xl transition-all duration-300 center",
@@ -127,5 +127,16 @@ export const domData = [
         type: "text",
         text: "Tesss",
         textClassList: "text-white text-nowrap flex items-center justify-center font-mono",
+    },
+];
+
+export const domData = [
+    {
+        id: "main-logo",
+        startPoint: 0.1,
+        endPoint: 0.4,
+        animations: {
+            scaleRange: 2,
+        },
     },
 ];
