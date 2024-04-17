@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { domData } from "./data";
+import { domData2 } from "./data";
 
-const ScrollAnimation = () => {
+const ScrollAnimation_old = () => {
     const [scrollYStart, setScrollYStart] = useState(null);
 
-    const doms = domData;
+    const doms = domData2;
 
     useEffect(() => {
         const playground = document.getElementById("playground");
@@ -50,22 +50,24 @@ const ScrollAnimation = () => {
             //console.log(window.innerHeight);
             //console.log(containerHeight);
 
-            const scrollIndex = scrollY / 100;
-            console.log(scrollIndex);
+            const index = scrollY / 100;
+            console.log(index);
 
             doms.forEach((dom) => {
-                if (scrollIndex < dom.startIndex) {
-                    return;
-                }
-
-                const index = scrollIndex - dom.startIndex;
-
-                if (index >= dom.classLists.length) {
-                    return;
-                }
-
                 const element = document.getElementById(dom.id);
-                element.className = dom.defaultClass + " " + dom.classLists[index];
+
+                const { SIZE, TRANSLATE_X, TRANSLATE_Y, OPACITY, FONT_SIZE } = dom.styles;
+                const size = getStyles(SIZE, index);
+                const translateX = getStyles(TRANSLATE_X, index);
+                const translateY = getStyles(TRANSLATE_Y, index);
+                const opacity = getStyles(OPACITY, index);
+                const fontSize = getStyles(FONT_SIZE, index);
+
+                element.style.width = size;
+                element.style.height = size;
+                element.style.transform = `translate(${translateX},${translateY})`;
+                element.style.opacity = opacity;
+                element.style.fontSize = fontSize;
             });
         };
 
@@ -82,22 +84,10 @@ const ScrollAnimation = () => {
         <div>
             <div className="h-screen"></div>
 
-            {/*
             <div id="container" className="h-screen2">
                 <div id="playground" className="sticky top-0 bg-black h-screen overflow-hidden">
                     {doms.map((dom, index) => (
                         <div key={index} id={dom.id} className={dom.classList}>
-                            {dom.type == "image" ? <img className="w-full" src={dom.src} /> : null}
-                            {dom.type == "text" ? <div className={dom.textClassList}>{dom.text}</div> : null}
-                        </div>
-                    ))}
-                </div>
-            </div> */}
-
-            <div id="container" className="h-screen2">
-                <div id="playground" className="sticky top-0 bg-black h-screen overflow-hidden">
-                    {doms.map((dom, index) => (
-                        <div key={index} id={dom.id}>
                             {dom.type == "image" ? <img className="w-full" src={dom.src} /> : null}
                             {dom.type == "text" ? <div className={dom.textClassList}>{dom.text}</div> : null}
                         </div>
@@ -110,4 +100,4 @@ const ScrollAnimation = () => {
     );
 };
 
-export default ScrollAnimation;
+export default ScrollAnimation_old;

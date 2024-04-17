@@ -23,7 +23,12 @@ export const NAV_DATA = [
                 text: "Playground 1",
                 path: "/playground_1",
                 activePaths: ["/playground_1"],
-            }
+            },
+            {
+                text: "Playground 2",
+                path: "/playground_2",
+                activePaths: ["/playground_2"],
+            },
         ],
         icon: faCube,
     },

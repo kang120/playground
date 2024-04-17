@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { toggleModal } from "./helpers";
 import { CodeBlock, dracula } from "react-code-blocks";
 import useAppStore from "./stores/AppStore";
+import ScrollAnimation_old from "./components/ScrollAnimation/ScrollAnimation_old";
 
 function App() {
     const { codeBlock, changeCodeBlock } = useAppStore();
@@ -20,6 +21,7 @@ function App() {
                     <Route path="/" element={<ButtonsView />} />
                     <Route path="/buttons" element={<ButtonsView />} />
                     <Route path="/playground_1" element={<ScrollAnimation />} />
+                    <Route path="/playground_2" element={<ScrollAnimation_old />} />
                 </Routes>
             </Router>
 
