@@ -288,8 +288,24 @@ const ButtonsView = () => {
                 <Section id="btn-special">
                     <div className="text-xl text-center font-bold">Special Button</div>
 
-                    <div className="mt-10 grid-cols-10 gap-x-2 gap-y-4">
-                        <Button1 />
+                    <div className="mt-10 flex flex-col gap-y-7">
+                        {tailwindColors.map((color, index) => (
+                            <div
+                                key={index}
+                                className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-11 gap-x-2 gap-y-4"
+                            >
+                                {values.map((value, index2) => (
+                                    <div key={index2} className="flex flex-col items-center">
+                                        <Button1 color={color} value={value}>
+                                            Click me
+                                        </Button1>
+                                        <div className="text-xs">
+                                            {color}-{value}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
                     </div>
                 </Section>
             </div>

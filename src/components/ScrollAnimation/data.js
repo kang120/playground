@@ -135,15 +135,13 @@ export const domData = [
         id: "main-logo",
         animations: {
             scale: {
-                startPoint: 0.1,
-                endPoint: 0.4,
-                targetValue: 2,
+                startValue: 1,
+                endValue: 2,
             },
-            transformY: {
-                startPoint: 0.2,
-                endPoint: 0.4,
-                targetValue: 2,
-            }
+            translateY: {
+                startValue: 300,
+                endValue: -900,
+            },
         },
     },
 ];

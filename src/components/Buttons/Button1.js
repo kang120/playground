@@ -1,11 +1,14 @@
-const Button1 = () => {
+import { useEffect } from "react";
+import { useState } from "react";
+
+const Button1 = ({ color, value }) => {
     return (
-        <button className="btn btn-sm relative z-20 overflow-hidden">
-            <div className="relative z-30">Click me</div>
-            <div className="absolute top-1/2 left-1/2 w-full h-full z-0 bg-blue-300 origin-top-left animate-spin"></div>
+        <button className={`btn btn-sm btn-${color}-${value} relative z-20 overflow-hidden`}>
+            <div className={`relative btn-${color}-${value} z-30`}>Click me</div>
+            <div className={`absolute top-1/2 left-1/2 w-full h-full btn-${color}-${value} z-0 origin-top-left animate-spin`}></div>
             <div
                 style={{ width: "calc(100% - 6px)", height: "calc(100% - 6px)", top: "3px", left: "3px" }}
-                className="absolute bg-blue-300 z-10 rounded"
+                className={`absolute btn-${color}-${value} z-10 rounded`}
             ></div>
         </button>
     );
