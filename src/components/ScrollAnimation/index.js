@@ -32,18 +32,20 @@ const ScrollAnimation = () => {
 
             const value = animation.startValue + (animation.endValue - animation.startValue) * scrollPercentage;
 
-            return value;
+            return value + animation.unit;
         };
 
         const update = () => {
             const container = document.getElementById("container");
             const animation = document.getElementById("animation");
 
+            // const startScrollY = container.offsetTop - window.innerHeight;
+            // const endScrollY = container.offsetTop + container.offsetHeight - window.innerHeight;
+
+            const containerTop = container.getBoundingClientRect().top;
             const animationTop = animation.getBoundingClientRect().top;
 
             const scrollY = window.scrollY;
-            const startScrollY = container.offsetTop - window.innerHeight;
-            const endScrollY = container.offsetTop + container.offsetHeight - window.innerHeight;
 
             /*
             if (animationTop >= window.innerHeight || animationTop < 0) {
@@ -54,10 +56,29 @@ const ScrollAnimation = () => {
             doms.forEach((dom) => {
                 const element = document.getElementById(dom.id);
 
-                const scale = getStyles(scrollY, startScrollY, endScrollY, dom.animations.scale);
-                const translateY = getStyles(scrollY, startScrollY, endScrollY, dom.animations.translateY);
+                if (animationTop >= 0 && containerTop >= 0) {
+                    const startScrollY = container.offsetTop - window.innerHeight;
+                    const endScrollY = startScrollY + animation.offsetHeight;
 
-                element.style.transform = `translate3d(0, ${translateY}px, 0) scale(${scale})`;
+                    const scale = getStyles(scrollY, startScrollY, endScrollY, dom.animations.onScroll.scale);
+                    const translateX = getStyles(scrollY, startScrollY, endScrollY, dom.animations.onScroll.translateX);
+                    const translateY = getStyles(scrollY, startScrollY, endScrollY, dom.animations.onScroll.translateY);
+                    const opacity = getStyles(scrollY, startScrollY, endScrollY, dom.animations.onScroll.opacity);
+
+                    element.style.transform = `translate3d(${translateX}, ${translateY}, 0) scale(${scale})`;
+                    element.style.opacity = `${opacity}`;
+                } else {
+                    const startScrollY = container.offsetTop - window.innerHeight + animation.offsetHeight;
+                    const endScrollY = container.offsetTop + container.offsetHeight - animation.offsetHeight;
+
+                    const scale = getStyles(scrollY, startScrollY, endScrollY, dom.animations.onSticky.scale);
+                    const translateX = getStyles(scrollY, startScrollY, endScrollY, dom.animations.onSticky.translateX);
+                    const translateY = getStyles(scrollY, startScrollY, endScrollY, dom.animations.onSticky.translateY);
+                    const opacity = getStyles(scrollY, startScrollY, endScrollY, dom.animations.onSticky.opacity);
+
+                    element.style.transform = `translate3d(${translateX}, ${translateY}, 0) scale(${scale})`;
+                    element.style.opacity = `${opacity}`;
+                }
             });
         };
 
@@ -79,7 +100,7 @@ const ScrollAnimation = () => {
                 <div id="animation" style={{ perspective: "800px" }} className="sticky top-0 bg-black h-screen overflow-hidden">
                     <div
                         id="main-logo"
-                        className="absolute left-1/2 top-1/2 w-24 h-24 px-4 py-8 bg-gradient-to-r from-rose-400 to-red-200 rounded-3xl transition-all duration-300 center opacity-100"
+                        className="absolute left-1/2 top-1/2 w-24 h-24 px-4 py-8 bg-gradient-to-r from-rose-400 to-red-200 rounded-3xl center opacity-100"
                     >
                         <img className="w-full" />
                     </div>

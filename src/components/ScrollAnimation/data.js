@@ -134,13 +134,49 @@ export const domData = [
     {
         id: "main-logo",
         animations: {
-            scale: {
-                startValue: 1,
-                endValue: 2,
+            onScroll: {
+                scale: {
+                    startValue: 1,
+                    endValue: 1.5,
+                    unit: "",
+                },
+                translateX: {
+                    startValue: -50,
+                    endValue: -50,
+                    unit: "%",
+                },
+                translateY: {
+                    startValue: 400,
+                    endValue: -100,
+                    unit: "px",
+                },
+                opacity: {
+                    startValue: 0,
+                    endValue: 100,
+                    unit: "%",
+                },
             },
-            translateY: {
-                startValue: 300,
-                endValue: -900,
+            onSticky: {
+                scale: {
+                    startValue: 1.5,
+                    endValue: 5,
+                    unit: "",
+                },
+                translateX: {
+                    endValue: -50,
+                    startValue: -50,
+                    unit: "%",
+                },
+                translateY: {
+                    startValue: -100,
+                    endValue: -1300,
+                    unit: "px",
+                },
+                opacity: {
+                    startValue: 100,
+                    endValue: 0,
+                    unit: "%",
+                },
             },
         },
     },

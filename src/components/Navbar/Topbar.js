@@ -58,7 +58,7 @@ const Topbar = () => {
             </div>
 
             <div className="md:hidden h-full ms-auto me-4 p-2 rounded-full">
-                <img className="w-full h-full" src={lwkLogo} />
+                <img className="h-full" src={lwkLogo} />
             </div>
         </div>
     );
