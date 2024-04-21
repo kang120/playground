@@ -136,7 +136,7 @@ export const domData = [
         animations: {
             onScroll: {
                 scale: {
-                    startValue: 1,
+                    startValue: 0,
                     endValue: 1.5,
                     unit: "",
                 },
@@ -174,7 +174,400 @@ export const domData = [
                 },
                 opacity: {
                     startValue: 100,
+                    endValue: -200,
+                    unit: "%",
+                },
+            },
+        },
+    },
+    {
+        id: "main-text",
+        animations: {
+            onScroll: {
+                scale: {
+                    startValue: -1,
+                    endValue: 2,
+                    unit: "",
+                },
+                translateX: {
+                    startValue: -50,
+                    endValue: -50,
+                    unit: "%",
+                },
+                translateY: {
+                    startValue: 400,
+                    endValue: 100,
+                    unit: "px",
+                },
+                opacity: {
+                    startValue: 0,
+                    endValue: 100,
+                    unit: "%",
+                },
+            },
+            onSticky: {
+                scale: {
+                    startValue: 2,
+                    endValue: 5,
+                    unit: "",
+                },
+                translateX: {
+                    startValue: -50,
+                    endValue: -50,
+                    unit: "%",
+                },
+                translateY: {
+                    startValue: 100,
+                    endValue: -800,
+                    unit: "px",
+                },
+                opacity: {
+                    startValue: 100,
                     endValue: 0,
+                    unit: "%",
+                },
+            },
+        },
+    },
+
+    {
+        id: "element-1",
+        animations: {
+            onScroll: {
+                scale: {
+                    startValue: 1,
+                    endValue: 1.5,
+                    unit: "",
+                },
+                translateX: {
+                    startValue: 0,
+                    endValue: -200,
+                    unit: "px",
+                },
+                translateY: {
+                    startValue: 0,
+                    endValue: 0,
+                    unit: "px",
+                },
+                opacity: {
+                    startValue: 70,
+                    endValue: 70,
+                    unit: "%",
+                },
+            },
+            onSticky: {
+                scale: {
+                    startValue: 1.5,
+                    endValue: 2.5,
+                    unit: "",
+                },
+                translateX: {
+                    startValue: -200,
+                    endValue: -700,
+                    unit: "px",
+                },
+                translateY: {
+                    startValue: 0,
+                    endValue: 0,
+                    unit: "px",
+                },
+                opacity: {
+                    startValue: 70,
+                    endValue: 70,
+                    unit: "%",
+                },
+            },
+        },
+    },
+    {
+        id: "element-2",
+        animations: {
+            onScroll: {
+                scale: {
+                    startValue: 1.5,
+                    endValue: 2,
+                    unit: "",
+                },
+                translateX: {
+                    startValue: 100,
+                    endValue: -100,
+                    unit: "px",
+                },
+                translateY: {
+                    startValue: 0,
+                    endValue: 0,
+                    unit: "px",
+                },
+                opacity: {
+                    startValue: 50,
+                    endValue: 50,
+                    unit: "%",
+                },
+            },
+            onSticky: {
+                scale: {
+                    startValue: 2,
+                    endValue: 4,
+                    unit: "",
+                },
+                translateX: {
+                    startValue: -100,
+                    endValue: -700,
+                    unit: "px",
+                },
+                translateY: {
+                    startValue: 0,
+                    endValue: 0,
+                    unit: "px",
+                },
+                opacity: {
+                    startValue: 50,
+                    endValue: 50,
+                    unit: "%",
+                },
+            },
+        },
+    },
+    {
+        id: "element-3",
+        animations: {
+            onScroll: {
+                scale: {
+                    startValue: 0.8,
+                    endValue: 1.2,
+                    unit: "",
+                },
+                translateX: {
+                    startValue: 0,
+                    endValue: 200,
+                    unit: "px",
+                },
+                translateY: {
+                    startValue: 0,
+                    endValue: 0,
+                    unit: "px",
+                },
+                opacity: {
+                    startValue: 20,
+                    endValue: 40,
+                    unit: "%",
+                },
+            },
+            onSticky: {
+                scale: {
+                    startValue: 1.2,
+                    endValue: 1.5,
+                    unit: "",
+                },
+                translateX: {
+                    startValue: 200,
+                    endValue: 600,
+                    unit: "px",
+                },
+                translateY: {
+                    startValue: 0,
+                    endValue: -100,
+                    unit: "px",
+                },
+                opacity: {
+                    startValue: 40,
+                    endValue: 40,
+                    unit: "%",
+                },
+            },
+        },
+    },
+    {
+        id: "element-4",
+        animations: {
+            onScroll: {
+                scale: {
+                    startValue: 0.5,
+                    endValue: 1,
+                    unit: "",
+                },
+                translateX: {
+                    startValue: 100,
+                    endValue: -50,
+                    unit: "px",
+                },
+                translateY: {
+                    startValue: 0,
+                    endValue: 0,
+                    unit: "px",
+                },
+                opacity: {
+                    startValue: 40,
+                    endValue: 40,
+                    unit: "%",
+                },
+            },
+            onSticky: {
+                scale: {
+                    startValue: 1,
+                    endValue: 1.5,
+                    unit: "",
+                },
+                translateX: {
+                    startValue: -50,
+                    endValue: -500,
+                    unit: "px",
+                },
+                translateY: {
+                    startValue: 0,
+                    endValue: 0,
+                    unit: "px",
+                },
+                opacity: {
+                    startValue: 40,
+                    endValue: 40,
+                    unit: "%",
+                },
+            },
+        },
+    },
+    {
+        id: "element-5",
+        animations: {
+            onScroll: {
+                scale: {
+                    startValue: 0.3,
+                    endValue: 0.5,
+                    unit: "",
+                },
+                translateX: {
+                    startValue: -100,
+                    endValue: 50,
+                    unit: "px",
+                },
+                translateY: {
+                    startValue: 0,
+                    endValue: 0,
+                    unit: "px",
+                },
+                opacity: {
+                    startValue: 20,
+                    endValue: 20,
+                    unit: "%",
+                },
+            },
+            onSticky: {
+                scale: {
+                    startValue: 0.5,
+                    endValue: 1.5,
+                    unit: "",
+                },
+                translateX: {
+                    startValue: 50,
+                    endValue: 400,
+                    unit: "px",
+                },
+                translateY: {
+                    startValue: 0,
+                    endValue: -100,
+                    unit: "px",
+                },
+                opacity: {
+                    startValue: 20,
+                    endValue: 60,
+                    unit: "%",
+                },
+            },
+        },
+    },
+    {
+        id: "element-6",
+        animations: {
+            onScroll: {
+                scale: {
+                    startValue: 1,
+                    endValue: 1.5,
+                    unit: "",
+                },
+                translateX: {
+                    startValue: 0,
+                    endValue: 300,
+                    unit: "px",
+                },
+                translateY: {
+                    startValue: 0,
+                    endValue: 0,
+                    unit: "px",
+                },
+                opacity: {
+                    startValue: 70,
+                    endValue: 70,
+                    unit: "%",
+                },
+            },
+            onSticky: {
+                scale: {
+                    startValue: 1.5,
+                    endValue: 2.2,
+                    unit: "",
+                },
+                translateX: {
+                    startValue: 300,
+                    endValue: 600,
+                    unit: "px",
+                },
+                translateY: {
+                    startValue: 0,
+                    endValue: -100,
+                    unit: "px",
+                },
+                opacity: {
+                    startValue: 70,
+                    endValue: 70,
+                    unit: "%",
+                },
+            },
+        },
+    },
+    {
+        id: "element-7",
+        animations: {
+            onScroll: {
+                scale: {
+                    startValue: 0.2,
+                    endValue: 0.8,
+                    unit: "",
+                },
+                translateX: {
+                    startValue: -100,
+                    endValue: -400,
+                    unit: "px",
+                },
+                translateY: {
+                    startValue: 0,
+                    endValue: 0,
+                    unit: "px",
+                },
+                opacity: {
+                    startValue: 70,
+                    endValue: 70,
+                    unit: "%",
+                },
+            },
+            onSticky: {
+                scale: {
+                    startValue: 0.8,
+                    endValue: 1,
+                    unit: "",
+                },
+                translateX: {
+                    startValue: -400,
+                    endValue: -800,
+                    unit: "px",
+                },
+                translateY: {
+                    startValue: 0,
+                    endValue: 0,
+                    unit: "px",
+                },
+                opacity: {
+                    startValue: 70,
+                    endValue: 90,
                     unit: "%",
                 },
             },

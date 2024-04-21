@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { domData } from "./data";
 import logo from "./logo_dark_sm.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const ScrollAnimation = () => {
     const [scrollYStart, setScrollYStart] = useState(null);
@@ -21,11 +24,11 @@ const ScrollAnimation = () => {
     useEffect(() => {
         const getStyles = (scrollY, startScrollY, endScrollY, animation) => {
             if (scrollY < startScrollY) {
-                return animation.startValue;
+                return animation.startValue + animation.unit;
             }
 
             if (scrollY > endScrollY) {
-                return animation.endValue;
+                return animation.endValue + animation.unit;
             }
 
             const scrollPercentage = (scrollY - startScrollY) / (endScrollY - startScrollY);
@@ -93,17 +96,56 @@ const ScrollAnimation = () => {
 
     return (
         <div>
-            <div className="h-screen"></div>
+            <div className="h-screen">
+                <div className="pt-24 text-center">
+                    <Link to="/">
+                        <button className="btn btn-sm btn-blue-600">Back</button>
+                    </Link>
+                    <div className="mt-6 font-bold text-2xl">Scroll Down</div>
+                    <FontAwesomeIcon icon={faArrowDown} className="mt-6 fa-xl" />
+                </div>
+            </div>
             <div className="h-96"></div>
 
             <div id="container" className="h-screen2">
                 <div id="animation" style={{ perspective: "800px" }} className="sticky top-0 bg-black h-screen overflow-hidden">
                     <div
                         id="main-logo"
-                        className="absolute left-1/2 top-1/2 w-24 h-24 px-4 py-8 bg-gradient-to-r from-rose-400 to-red-200 rounded-3xl center opacity-100"
+                        className="absolute left-1/2 top-1/2 w-24 h-24 px-4 py-8 bg-gradient-to-r from-rose-600 to-red-200 rounded-3xl center opacity-100"
                     >
                         <img className="w-full" />
                     </div>
+                    <div id="main-text" className="absolute left-1/2 top-1/2 -translate-x-1/2 translate-y-16 text-white">
+                        Playground 123456
+                    </div>
+                    <div
+                        id="element-1"
+                        className="absolute left-1/3 top-20 w-16 h-16 bg-gradient-to-r from-blue-600 to-sky-400 rounded-lg"
+                    ></div>
+                    <div
+                        id="element-2"
+                        className="absolute left-44 top-32 w-16 h-16 bg-gradient-to-r from-purple-600 to-violet-400 rounded-lg"
+                    ></div>
+                    <div
+                        id="element-3"
+                        className="absolute right-1/3 top-14 w-16 h-16 bg-gradient-to-r from-blue-600 to-sky-400 rounded-lg"
+                    ></div>
+                    <div
+                        id="element-4"
+                        className="absolute left-1/3 top-44 w-16 h-16 bg-gradient-to-r from-cyan-500 to-sky-300 rounded-lg"
+                    ></div>
+                    <div
+                        id="element-5"
+                        className="absolute right-1/3 top-36 w-16 h-16 bg-gradient-to-r from-cyan-500 to-sky-300 rounded-lg"
+                    ></div>
+                    <div
+                        id="element-6"
+                        className="absolute right-96 top-56 w-16 h-16 bg-gradient-to-r from-cyan-500 to-sky-300 rounded-lg"
+                    ></div>
+                    <div
+                        id="element-7"
+                        className="absolute left-1/2 top-96 w-16 h-16 bg-gradient-to-r from-cyan-500 to-sky-300 rounded-lg"
+                    ></div>
                 </div>
             </div>
 
